@@ -1,0 +1,14 @@
+Once you have all sorted out the basics of git and have it working on your machine,
+we try and abide but these few basics.
+
+The general git workflow may look something like this:
+1) git pull
+2) make any edits
+3) git add *    to stage changes to all files or git add x    where x is the specific file you changed. 
+4) git commit -m ""     where, in between the quotes, you write whatever changes you made.
+    
+    ****NOTE**** : we will use the imperative tense when writing comit messages. For example, suppose you wrote a
+    function called add_one(), you might write something like "Write a function called add_one which ...."
+
+5) git push
+

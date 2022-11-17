@@ -11,4 +11,3 @@ The general git workflow may look something like this:
     function called add_one(), you might write something like "Write a function called add_one which ...."
 
 5) git push
-

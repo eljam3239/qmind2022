@@ -7,8 +7,7 @@ def greet(name, is_morning, temperature):
     return greeting, round(celsius, 2)
 
 demo = gr.Interface(
-    fn=greet,
-    inputs=["text", "checkbox", gr.Slider(0, 100)],
-    outputs=["text", "number"],
+    fn = greet,
+    inputs = ["text",'checkbox', ]
 )
 demo.launch()

@@ -14,20 +14,76 @@ form {
 </style>
 
 <head>
-    <title>Bike Usage Model</title>
+    <title>Diabetes Prediction</title>
 </head>
 <form action="{{ url_for('main') }}" method="POST">
     <fieldset>
         <legend>Input values:</legend>
-        Temperature:
-        <input name="temperature" type="number" required>
+        
+        <br> HighBP:
+        <input name="HighBP" type="number" required>
         <br>
-        <br> Humidity:
-        <input name="humidity" type="number" required>
+        <br> HighChol:
+        <input name="HighChol" type="number" required>
         <br>
-        <br> Windspeed:
-        <input name="windspeed" type="number" required>
+        <br> CholCheck:
+        <input name="CholCheck" type="number" required>
         <br>
+        <br> BMI:
+        <input name="BMI" type="number" required>
+        <br>
+        <br> Smoker:
+        <input name="Smoker" type="number" required>
+        <br>
+        <br> Stroke:
+        <input name="Stroke" type="number" required>
+        <br>
+        <br> HeartDiseaseorAttack:
+        <input name="HeartDiseaseorAttack" type="number" required>
+        <br>
+        <br> PhysActivity:
+        <input name="PhysActivity" type="number" required>
+        <br>
+        <br> Fruits:
+        <input name="Fruits" type="number" required>
+        <br>
+        <br> Veggies:
+        <input name="Veggies" type="number" required>
+        <br>
+        <br> HeavyAlchoholConsump:
+        <input name="HeavyAlchoholConsump" type="number" required>
+        <br>
+        <br> AnyHealthcare:
+        <input name="AnyHealthcare" type="number" required>
+        <br>
+        <br> NoDocbcCost:
+        <input name="NoDocbcCost" type="number" required>
+        <br>
+        <br> GenHlth:
+        <input name="GenHlth" type="number" required>
+        <br>
+        <br> MentHlth:
+        <input name="MentHlth" type="number" required>
+        <br>
+        <br> PhysHlth:
+        <input name="PhysHlth" type="number" required>
+        <br>
+        <br> DiffWalk:
+        <input name="DiffWalk" type="number" required>
+        <br>
+        <br> Sex:
+        <input name="Sex" type="number" required>
+        <br>
+        <br> Age:
+        <input name="Age" type="number" required>
+        <br>
+        <br> Education:
+        <input name="Education" type="number" required>
+        <br>
+        <br> Income:
+        <input name="Income" type="number" required>
+        <br>
+
         <br>
         <input type="submit">
     </fieldset>
@@ -39,7 +95,7 @@ form {
     		<b>{{ variable }}</b> : {{ value }}
     	{% endfor %}
 		<br>
-    	<br> Predicted number of bikes in use:
+    	<br> Prediction:
    		<p style="font-size:50px">{{ result }}</p>
     {% endif %}
 </div>

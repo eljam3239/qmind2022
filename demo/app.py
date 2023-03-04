@@ -14,13 +14,10 @@ def main():
     if flask.request.method == 'GET':
         # Just render the initial form, to get input
         return(flask.render_template('main.html'))
-    
+    Print('Hi')
     if flask.request.method == 'POST':
         # Extract the input
-        temperature = flask.request.form['temperature']
-        humidity = flask.request.form['humidity']
-        windspeed = flask.request.form['windspeed']
-
+        
         HighBP = flask.request.form['HighBP']
         HighChol = flask.request.form['HighChol']
         CholCheck = flask.request.form['CholCheck']
@@ -42,10 +39,10 @@ def main():
         Age = flask.request.form['Age']
         Education = flask.request.form['Education']
         Income = flask.request.form['Income']
-
+        
         # Make DataFrame for model
-        input_variables = pd.DataFrame([[temperature, humidity, windspeed]],
-                                       columns=['temperature', 'humidity', 'windspeed'],
+        input_variables = pd.DataFrame([[HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, Fruits, Veggies, HvyAlchoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age, Education, Income]],
+                                       columns=['HighBP', 'HighChol', 'CholCheck', 'BMI', 'Smoker', 'Stroke', 'HeartDiseaseorAttack', 'PhysActivity', 'Fruits', 'Veggies', 'HvyAlchoholConsump', 'AnyHealthcare', 'NoDocbcCost', 'GenHlth', 'MentHlth', 'PhysHlth', 'DiffWalk', 'Sex', 'Age', 'Education', 'Income'],
                                        dtype=float,
                                        index=['input'])
 
@@ -55,11 +52,29 @@ def main():
         # Render the form again, but add in the prediction and remind user
         # of the values they input before
         return flask.render_template('main.html',
-                                     original_input={'Temperature':temperature,
-                                                     'Humidity':humidity,
-                                                     'Windspeed':windspeed},
+                                     original_input={'HighBP': HighBP,
+                                                     'HighChol':HighChol,
+                                                     'BMI': BMI,
+                                                     'Smoker': Smoker,
+                                                     'Stroke': Stroke,
+                                                     'HeartDiseaseorAttack': HeartDiseaseorAttack,
+                                                     'PhysActivity':PhysActivity,
+                                                     'Fruits': Fruits,
+                                                     'Veggies': Veggies,
+                                                     'HvyAlchoholConsump': HvyAlchoholConsump,
+                                                     'AnyHealthcare': AnyHealthcare,
+                                                     'NoDocbcCost':NoDocbcCost,
+                                                     'GenHlth': GenHlth,
+                                                     'MentHlth': MentHlth,
+                                                     'PhysHlth': PhysHlth,
+                                                     'DiffWalk': DiffWalk,
+                                                     'Sex':Sex,
+                                                     'Age': Age, 
+                                                     'Education':Education,
+                                                     'Income':Income},
                                      result=prediction,
                                      )
 
 if __name__ == '__main__':
     app.run()
+    
